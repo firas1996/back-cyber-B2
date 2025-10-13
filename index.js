@@ -2,6 +2,7 @@ const express = require("express"); // Import the Express library
 const mongoose = require("mongoose"); // Import the Mongoose library
 const dotenv = require("dotenv"); // Import the dotenv library to manage environment variables
 dotenv.config({ path: "./.env" }); // Load environment variables from .env file
+const userRouter = require("./routes/userRoutes"); // Import user routes
 
 mongoose
   .connect(process.env.DATABASE)
@@ -13,6 +14,8 @@ mongoose
   });
 
 const app = express(); // Create an Express application
+app.use("/users", userRouter); // Use the user routes in the application
+app.use(express.json()); // Middleware to parse JSON request bodies
 const port = 1234; // Define the port number
 
 app.listen(port, () => {
