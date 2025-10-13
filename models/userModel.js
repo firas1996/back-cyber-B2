@@ -29,6 +29,19 @@ const userSchema = new mongoose.Schema({
     },
     message: "Passwords are not the same !!!!",
   },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
+  lastPasswordChangeDate: {
+    type: Date,
+    default: Date.now(),
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const User = mongoose.model("User", userSchema);
