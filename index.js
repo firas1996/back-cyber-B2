@@ -14,8 +14,8 @@ mongoose
   });
 
 const app = express(); // Create an Express application
-app.use("/users", userRouter); // Use the user routes in the application
 app.use(express.json()); // Middleware to parse JSON request bodies
+app.use("/users", userRouter); // Use the user routes in the application
 const port = 1234; // Define the port number
 
 app.listen(port, () => {
