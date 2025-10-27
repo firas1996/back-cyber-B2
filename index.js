@@ -11,7 +11,7 @@ mongoose
   })
   .catch((e) => {
     console.log("Connection to database failed !!!" + e);
-  });
+  }); // Connect to the MongoDB database
 
 const app = express(); // Create an Express application
 app.use(express.json()); // Middleware to parse JSON request bodies
