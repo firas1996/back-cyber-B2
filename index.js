@@ -19,5 +19,5 @@ app.use("/users", userRouter); // Use the user routes in the application
 const port = 1234; // Define the port number
 
 app.listen(port, () => {
-  console.log(`Server is running !!!`); // Log a message when the server starts
+  console.log(`Server is running !!! ${port} `); // Log a message when the server starts
 });
